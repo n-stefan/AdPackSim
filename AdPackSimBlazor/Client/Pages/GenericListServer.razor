@@ -1,0 +1,29 @@
+﻿@page "/genericlistserver"
+
+@inject HttpClient HttpClient
+
+@inherits Server
+
+<Calculator
+    Title="Safe code using a generic List"
+    Description="Calculate: Safe code using a generic List."
+    Data=@Data
+    OptimalTotalDays=@OptimalTotalDays
+    OptimalReinvestingDays=@OptimalReinvestingDays
+    OptimalInitialPacks=@OptimalInitialPacks
+    Calculate=@Calculate
+    ToROL=@ToROL />
+
+@if (Error)
+{
+    <div class="red">An error occurred.</div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        base.Http = HttpClient;
+        base.BaseUrl = "/api/GenericList/";
+    }
+}

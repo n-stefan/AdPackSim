@@ -1,0 +1,79 @@
+﻿@model Data;
+
+@{ var controller = ViewBag.Controller; }
+
+<form method="post">
+    <div>
+        <table>
+            <tr>
+                <td>Total days</td>
+                <td>Reinvesting days</td>
+                <td>Initial packs</td>
+                <td>Return/Day/Pack</td>
+                <td>Exchange rate</td>
+            </tr>
+            <tr>
+                <td><input type="number" name="TotalDays" value="@Model.TotalDays" /></td>
+                <td><input type="number" name="ReinvestingDays" value="@Model.ReinvestingDays" /></td>
+                <td><input type="number" name="InitialPacks" value="@Model.InitialPacks" /></td>
+                <td><input type="number" name="ReturnPerDayPerPack" value="@Model.ReturnPerDayPerPack" /></td>
+                <td><input type="number" name="ExchangeRate" value="@Model.ExchangeRate" /></td>
+            </tr>
+            <tr>
+                <td>Max active packs</td>
+                <td>Active packs</td>
+                <td>Total</td>
+                <td>Initial investment</td>
+                <td>Profit</td>
+                <td>Peak return/Day</td>
+                <td>Peak return/Month</td>
+                <td>Profit percent</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="MaxActivePacks" value="@Model.MaxActivePacks" readonly /></td>
+                <td><input type="text" name="ActivePacks" value="@Model.ActivePacks" readonly /></td>
+                <td><input type="text" name="Total" class="blue" value="@Model.Total" readonly /></td>
+                <td><input type="text" name="InitialInvestment" class="red" value="@Model.InitialInvestment" readonly /></td>
+                <td><input type="text" name="Profit" class="lime" value="@Model.Profit" readonly /></td>
+                <td><input type="text" name="PeakReturnPerDay" value="@Model.PeakReturnPerDay" readonly /></td>
+                <td><input type="text" name="PeakReturnPerMonth" value="@Model.PeakReturnPerMonth" readonly /></td>
+                <td><input type="text" name="ProfitPercent" value="@Model.ProfitPercent" readonly /></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>Total (ROL)</td>
+                <td>Init. invest. (ROL)</td>
+                <td>Profit (ROL)</td>
+                <td>Peak/Day (ROL)</td>
+                <td>Peak/Month (ROL)</td>
+                <td>Total percent</td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><input type="text" name="TotalROL" class="blue" value="@Model.TotalROL" readonly /></td>
+                <td><input type="text" name="InitialInvestmentROL" class="red" value="@Model.InitialInvestmentROL" readonly /></td>
+                <td><input type="text" name="ProfitROL" class="lime" value="@Model.ProfitROL" readonly /></td>
+                <td><input type="text" name="PeakReturnPerDayROL" value="@Model.PeakReturnPerDayROL" readonly /></td>
+                <td><input type="text" name="PeakReturnPerMonthROL" value="@Model.PeakReturnPerMonthROL" readonly /></td>
+                <td><input type="text" name="TotalPercent" value="@Model.TotalPercent" readonly /></td>
+            </tr>
+            <tr>
+                <td><button name="OptimalTotalDays" asp-controller="@controller" asp-action="OptimalTotalDays">Opt. total days</button></td>
+                <td><button name="OptimalReinvestingDays" asp-controller="@controller" asp-action="OptimalReinvestingDays">Opt. reinv. days</button></td>
+                <td><button name="OptimalInitialPacks" asp-controller="@controller" asp-action="OptimalInitialPacks">Opt. initial packs</button></td>
+                <td><button name="Calculate" asp-controller="@controller" asp-action="Calculate">Calculate</button></td>
+                <td><button name="ToROL" asp-controller="@controller" asp-action="ToROL">To ROL</button></td>
+            </tr>
+            <tr>
+                <td>Timer 1 (ms)</td>
+                <td>Timer 2 (ms)</td>
+                <td>Timer 3 (ms)</td>
+            </tr>
+            <tr>
+                <td><input type="text" name="Timer1" value="@Model.Timer1" readonly /></td>
+                <td><input type="text" name="Timer2" value="@Model.Timer2" readonly /></td>
+                <td><input type="text" name="Timer3" value="@Model.Timer3" readonly /></td>
+            </tr>
+        </table>
+    </div>
+</form>

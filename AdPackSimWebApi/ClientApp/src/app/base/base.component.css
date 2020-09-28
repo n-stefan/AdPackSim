@@ -1,0 +1,40 @@
+/*
+body {
+  Uncomment this to enable scrolling and zooming
+  touch-action: manipulation;
+}
+*/
+
+td {
+    /*font-family: 'Fixedsys Excelsior 3.01';*/
+    font-size: 14px;
+}
+
+input {
+    width: 145px;
+    margin: 1px;
+}
+
+button {
+    width: 145px;
+    margin: 1px;
+}
+
+/*
+table {
+    margin-left: 25px;
+    margin-top: 25px;
+}
+*/
+
+.red {
+    color: red;
+}
+
+.lime {
+    color: lime;
+}
+
+.blue {
+    color: blue;
+}

@@ -1,0 +1,23 @@
+﻿@page "/unsafestructarrayserverless"
+
+@inject IUnsafeStructArray UnsafeStructArray
+
+@inherits Serverless
+
+<Calculator
+    Title="Unsafe code using a struct Array (Serverless)"
+    Description="Calculate: Unsafe code using a struct Array (Serverless)."
+    Data=@Data
+    OptimalTotalDays=@OptimalTotalDays
+    OptimalReinvestingDays=@OptimalReinvestingDays
+    OptimalInitialPacks=@OptimalInitialPacks
+    Calculate=@Calculate
+    ToROL=@ToROL />
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        base.Calculator = UnsafeStructArray;
+    }
+}

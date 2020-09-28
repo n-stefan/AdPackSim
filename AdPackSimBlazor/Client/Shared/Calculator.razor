@@ -1,0 +1,104 @@
+﻿<h1>@Title</h1>
+
+<p>@Description</p>
+
+<div>
+    <table>
+        <tr>
+            <td>Total days</td>
+            <td>Reinvesting days</td>
+            <td>Initial packs</td>
+            <td>Return/Day/Pack</td>
+            <td>Exchange rate</td>
+        </tr>
+        <tr>
+            <td><input type="number" name="TotalDays" @bind="Data.TotalDays" /></td>
+            <td><input type="number" name="ReinvestingDays" @bind="Data.ReinvestingDays" /></td>
+            <td><input type="number" name="InitialPacks" @bind="Data.InitialPacks" /></td>
+            <td><input type="number" name="ReturnPerDayPerPack" @bind="Data.ReturnPerDayPerPack" /></td>
+            <td><input type="number" name="ExchangeRate" @bind="Data.ExchangeRate" /></td>
+        </tr>
+        <tr>
+            <td>Max active packs</td>
+            <td>Active packs</td>
+            <td>Total</td>
+            <td>Initial investment</td>
+            <td>Profit</td>
+            <td>Peak return/Day</td>
+            <td>Peak return/Month</td>
+            <td>Profit percent</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="MaxActivePacks" value="@Data.MaxActivePacks" readonly /></td>
+            <td><input type="text" name="ActivePacks" value="@Data.ActivePacks" readonly /></td>
+            <td><input type="text" name="Total" class="blue" value="@Data.Total" readonly /></td>
+            <td><input type="text" name="InitialInvestment" class="red" value="@Data.InitialInvestment" readonly /></td>
+            <td><input type="text" name="Profit" class="lime" value="@Data.Profit" readonly /></td>
+            <td><input type="text" name="PeakReturnPerDay" value="@Data.PeakReturnPerDay" readonly /></td>
+            <td><input type="text" name="PeakReturnPerMonth" value="@Data.PeakReturnPerMonth" readonly /></td>
+            <td><input type="text" name="ProfitPercent" value="@Data.ProfitPercent" readonly /></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>Total (ROL)</td>
+            <td>Init. invest. (ROL)</td>
+            <td>Profit (ROL)</td>
+            <td>Peak/Day (ROL)</td>
+            <td>Peak/Month (ROL)</td>
+            <td>Total percent</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><input type="text" name="TotalROL" class="blue" value="@Data.TotalROL" readonly /></td>
+            <td><input type="text" name="InitialInvestmentROL" class="red" value="@Data.InitialInvestmentROL" readonly /></td>
+            <td><input type="text" name="ProfitROL" class="lime" value="@Data.ProfitROL" readonly /></td>
+            <td><input type="text" name="PeakReturnPerDayROL" value="@Data.PeakReturnPerDayROL" readonly /></td>
+            <td><input type="text" name="PeakReturnPerMonthROL" value="@Data.PeakReturnPerMonthROL" readonly /></td>
+            <td><input type="text" name="TotalPercent" value="@Data.TotalPercent" readonly /></td>
+        </tr>
+        <tr>
+            <td><button name="OptimalTotalDays" @onclick="OptimalTotalDays">Opt. total days</button></td>
+            <td><button name="OptimalReinvestingDays" @onclick="OptimalReinvestingDays">Opt. reinv. days</button></td>
+            <td><button name="OptimalInitialPacks" @onclick="OptimalInitialPacks">Opt. initial packs</button></td>
+            <td><button name="Calculate" @onclick="Calculate">Calculate</button></td>
+            <td><button name="ToROL" @onclick="ToROL">To ROL</button></td>
+        </tr>
+        <tr>
+            <td>Timer 1 (ms)</td>
+            <td>Timer 2 (ms)</td>
+            <td>Timer 3 (ms)</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="Timer1" value="@Data.Timer1" readonly /></td>
+            <td><input type="text" name="Timer2" value="@Data.Timer2" readonly /></td>
+            <td><input type="text" name="Timer3" value="@Data.Timer3" readonly /></td>
+        </tr>
+    </table>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string Description { get; set; }
+
+    //TODO: Change Data members when @bind supports it (int/double instead of string)
+    [Parameter]
+    public Data Data { get; set; }
+
+    [Parameter]
+    public Func<Task> OptimalTotalDays { get; set; }
+
+    [Parameter]
+    public Func<Task> OptimalReinvestingDays { get; set; }
+
+    [Parameter]
+    public Func<Task> OptimalInitialPacks { get; set; }
+
+    [Parameter]
+    public Func<Task> Calculate { get; set; }
+
+    [Parameter]
+    public Func<Task> ToROL { get; set; }
+}

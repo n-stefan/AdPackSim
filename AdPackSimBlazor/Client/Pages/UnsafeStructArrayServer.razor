@@ -1,0 +1,29 @@
+﻿@page "/unsafestructarrayserver"
+
+@inject HttpClient HttpClient
+
+@inherits Server
+
+<Calculator
+    Title="Unsafe code using a struct Array"
+    Description="Calculate: Unsafe code using a struct Array."
+    Data=@Data
+    OptimalTotalDays=@OptimalTotalDays
+    OptimalReinvestingDays=@OptimalReinvestingDays
+    OptimalInitialPacks=@OptimalInitialPacks
+    Calculate=@Calculate
+    ToROL=@ToROL />
+
+@if (Error)
+{
+    <div class="red">An error occurred.</div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        base.Http = HttpClient;
+        base.BaseUrl = "/api/UnsafeStructArray/";
+    }
+}

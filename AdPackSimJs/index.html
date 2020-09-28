@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AdPackSimJs</title>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Total days</td>
+                <td>Reinvesting days</td>
+                <td>Initial packs</td>
+                <td>Return/Day/Pack</td>
+                <td>Exchange rate</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="TotalDays" value="365" /></td>
+                <td><input type="number" id="ReinvestingDays" value="200" /></td>
+                <td><input type="number" id="InitialPacks" value="100" /></td>
+                <td><input type="number" id="ReturnPerDayPerPack" value="0.185" /></td>
+                <td><input type="number" id="ExchangeRate" value="4.5" /></td>
+            </tr>
+            <tr>
+                <td>Max active packs</td>
+                <td>Active packs</td>
+                <td>Total</td>
+                <td>Initial investment</td>
+                <td>Profit</td>
+                <td>Peak return/Day</td>
+                <td>Peak return/Month</td>
+                <td>Profit percent</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="MaxActivePacks" readonly /></td>
+                <td><input type="text" id="ActivePacks" readonly /></td>
+                <td><input type="text" id="Total" class="blue" readonly /></td>
+                <td><input type="text" id="InitialInvestment" class="red" readonly /></td>
+                <td><input type="text" id="Profit" class="lime" readonly /></td>
+                <td><input type="text" id="PeakReturnPerDay" readonly /></td>
+                <td><input type="text" id="PeakReturnPerMonth" readonly /></td>
+                <td><input type="text" id="ProfitPercent" readonly /></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>Total (ROL)</td>
+                <td>Init. invest. (ROL)</td>
+                <td>Profit (ROL)</td>
+                <td>Peak/Day (ROL)</td>
+                <td>Peak/Month (ROL)</td>
+                <td>Total percent</td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td><input type="text" id="TotalROL" class="blue" readonly /></td>
+                <td><input type="text" id="InitialInvestmentROL" class="red" readonly /></td>
+                <td><input type="text" id="ProfitROL" class="lime" readonly /></td>
+                <td><input type="text" id="PeakReturnPerDayROL" readonly /></td>
+                <td><input type="text" id="PeakReturnPerMonthROL" readonly /></td>
+                <td><input type="text" id="TotalPercent" readonly /></td>
+            </tr>
+            <tr>
+                <td><button id="OptimalTotalDays">Opt. total days</button></td>
+                <td><button id="OptimalReinvestingDays">Opt. reinv. days</button></td>
+                <td><button id="OptimalInitialPacks">Opt. initial packs</button></td>
+                <td><button id="Calculate">Calculate</button></td>
+                <td><button id="ToROL">To ROL</button></td>
+            </tr>
+            <tr>
+                <td>Timer 1 (ms)</td>
+                <td>Timer 2 (ms)</td>
+                <td>Timer 3 (ms)</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="Timer1" readonly /></td>
+                <td><input type="text" id="Timer2" readonly /></td>
+                <td><input type="text" id="Timer3" readonly /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

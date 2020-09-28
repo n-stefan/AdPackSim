@@ -1,0 +1,11 @@
+﻿@model Data;
+
+<h1>Safe code using a generic List</h1>
+
+<p>Calculate: Safe code using a generic List.</p>
+
+@{ 
+    ViewData["Title"] = "Generic List";
+    ViewBag.Controller = "GenericList";
+    await Html.RenderPartialAsync("Calculator", Model);
+}

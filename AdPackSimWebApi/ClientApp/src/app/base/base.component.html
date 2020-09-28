@@ -1,0 +1,77 @@
+<h1>{{title}}</h1>
+
+<p>Calculate: {{title}}.</p>
+
+<div>
+    <table>
+        <tr>
+            <td>Total days</td>
+            <td>Reinvesting days</td>
+            <td>Initial packs</td>
+            <td>Return/Day/Pack</td>
+            <td>Exchange rate</td>
+        </tr>
+        <tr>
+            <td><input [(ngModel)]="data.totalDays" type="number" id="TotalDays" /></td>
+            <td><input [(ngModel)]="data.reinvestingDays" type="number" id="ReinvestingDays" /></td>
+            <td><input [(ngModel)]="data.initialPacks" type="number" id="InitialPacks" /></td>
+            <td><input [(ngModel)]="data.returnPerDayPerPack" type="number" id="ReturnPerDayPerPack" /></td>
+            <td><input [(ngModel)]="data.exchangeRate" type="number" id="ExchangeRate" /></td>
+        </tr>
+        <tr>
+            <td>Max active packs</td>
+            <td>Active packs</td>
+            <td>Total</td>
+            <td>Initial investment</td>
+            <td>Profit</td>
+            <td>Peak return/Day</td>
+            <td>Peak return/Month</td>
+            <td>Profit percent</td>
+        </tr>
+        <tr>
+            <td><input [ngModel]="data.maxActivePacks" type="text" id="MaxActivePacks" readonly /></td>
+            <td><input [ngModel]="data.activePacks" type="text" id="ActivePacks" readonly /></td>
+            <td><input [ngModel]="data.total" type="text" id="Total" class="blue" readonly /></td>
+            <td><input [ngModel]="data.initialInvestment" type="text" id="InitialInvestment" class="red" readonly /></td>
+            <td><input [ngModel]="data.profit" type="text" id="Profit" class="lime" readonly /></td>
+            <td><input [ngModel]="data.peakReturnPerDay" type="text" id="PeakReturnPerDay" readonly /></td>
+            <td><input [ngModel]="data.peakReturnPerMonth" type="text" id="PeakReturnPerMonth" readonly /></td>
+            <td><input [ngModel]="data.profitPercent" type="text" id="ProfitPercent" readonly /></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>Total (ROL)</td>
+            <td>Init. invest. (ROL)</td>
+            <td>Profit (ROL)</td>
+            <td>Peak/Day (ROL)</td>
+            <td>Peak/Month (ROL)</td>
+            <td>Total percent</td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><input [ngModel]="data.totalROL" type="text" id="TotalROL" class="blue" readonly /></td>
+            <td><input [ngModel]="data.initialInvestmentROL" type="text" id="InitialInvestmentROL" class="red" readonly /></td>
+            <td><input [ngModel]="data.profitROL" type="text" id="ProfitROL" class="lime" readonly /></td>
+            <td><input [ngModel]="data.peakReturnPerDayROL" type="text" id="PeakReturnPerDayROL" readonly /></td>
+            <td><input [ngModel]="data.peakReturnPerMonthROL" type="text" id="PeakReturnPerMonthROL" readonly /></td>
+            <td><input [ngModel]="data.totalPercent" type="text" id="TotalPercent" readonly /></td>
+        </tr>
+        <tr>
+            <td><button id="OptimalTotalDays" (click)="OptimalTotalDays_Click()">Opt. total days</button></td>
+            <td><button id="OptimalReinvestingDays" (click)="OptimalReinvestingDays_Click()">Opt. reinv. days</button></td>
+            <td><button id="OptimalInitialPacks" (click)="OptimalInitialPacks_Click()">Opt. initial packs</button></td>
+            <td><button id="Calculate" (click)="Calculate_Click()">Calculate</button></td>
+            <td><button id="ToROL" (click)="ToROL_Click()">To ROL</button></td>
+        </tr>
+        <tr>
+            <td>Timer 1 (ms)</td>
+            <td>Timer 2 (ms)</td>
+            <td>Timer 3 (ms)</td>
+        </tr>
+        <tr>
+            <td><input [ngModel]="data.timer1" type="text" id="Timer1" readonly /></td>
+            <td><input [ngModel]="data.timer2" type="text" id="Timer2" readonly /></td>
+            <td><input [ngModel]="data.timer3" type="text" id="Timer3" readonly /></td>
+        </tr>
+    </table>
+</div>

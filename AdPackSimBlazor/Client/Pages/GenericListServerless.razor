@@ -1,0 +1,23 @@
+﻿@page "/genericlistserverless"
+
+@inject IGenericList GenericList
+
+@inherits Serverless
+
+<Calculator
+    Title="Safe code using a generic List (Serverless)"
+    Description="Calculate: Safe code using a generic List (Serverless)."
+    Data=@Data
+    OptimalTotalDays=@OptimalTotalDays
+    OptimalReinvestingDays=@OptimalReinvestingDays
+    OptimalInitialPacks=@OptimalInitialPacks
+    Calculate=@Calculate
+    ToROL=@ToROL />
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        base.Calculator = GenericList;
+    }
+}

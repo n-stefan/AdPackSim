@@ -1,0 +1,11 @@
+﻿@model Data;
+
+<h1>Unsafe code using a struct Array</h1>
+
+<p>Calculate: Unsafe code using a struct Array.</p>
+
+@{
+    ViewData["Title"] = "Unsafe Struct Array";
+    ViewBag.Controller = "UnsafeStructArray";
+    await Html.RenderPartialAsync("Calculator", Model);
+}
